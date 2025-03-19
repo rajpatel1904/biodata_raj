@@ -84,8 +84,8 @@ body {
 .info-section {
     background-color: var(--card-background);
     border-radius: var(--border-radius);
-    padding: var(--spacing);
-    margin-bottom: var(--spacing);
+    padding: 15px;
+    margin-bottom: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
     backdrop-filter: blur(10px);
@@ -99,9 +99,9 @@ body {
 
 .info-section h2 {
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 10px;
+    padding-bottom: 8px;
 }
 
 .info-section h2 i {
@@ -116,15 +116,17 @@ body {
 }
 
 .info-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 .info-item {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 3px;
     background: rgba(255, 255, 255, 0.8);
-    padding: 15px;
+    padding: 10px;
     border-radius: var(--border-radius);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -132,6 +134,11 @@ body {
 .info-item .label {
     font-weight: bold;
     color: var(--secondary-color);
+    font-size: 0.9em;
+}
+
+.info-item .value {
+    font-size: 0.95em;
 }
 
 /* Timeline Style */
@@ -214,6 +221,15 @@ body {
     .timeline-item {
         padding-left: 15px;
     }
+
+    .info-grid {
+        gap: 8px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .info-item {
+        padding: 8px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -250,18 +266,44 @@ body {
 /* Family Grid Styles */
 .family-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 12px;
 }
 
 .family-item {
     background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+    padding: 12px;
     border-radius: var(--border-radius);
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: var(--transition);
 }
 
-.family-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.family-item h3 {
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.family-item p {
+    margin-bottom: 4px;
+    font-size: 0.95em;
+}
+
+.family-item p:last-child {
+    margin-bottom: 0;
+}
+
+.family-item strong {
+    color: #000000;
+    font-weight: 700;
+}
+
+/* Update responsive styles for family section */
+@media screen and (max-width: 768px) {
+    .family-grid {
+        gap: 8px;
+    }
+    
+    .family-item {
+        padding: 10px;
+    }
 } 
